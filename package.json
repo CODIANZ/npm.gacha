@@ -1,0 +1,28 @@
+{
+  "name": "@codianz/gacha",
+  "version": "0.0.1",
+  "description": "lottery algorithm.",
+  "main": "./dist/src/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "tsc",
+    "test": "tsc && node ./dist/test/test.js",
+    "deploy": "npm publish --access=public"
+  },
+  "keywords": [
+    "lottery",
+    "gacha",
+    "garapon",
+    "Typescript"
+  ],
+  "author": "Terukazu Inoue",
+  "license": "MIT",
+  "homepage": "https://github.com/CODIANZ/npm.gacha",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CODIANZ/npm.gacha.git"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.4"
+  }
+}
