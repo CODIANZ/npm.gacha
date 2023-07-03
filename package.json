@@ -1,6 +1,6 @@
 {
   "name": "@codianz/gacha",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "lottery algorithm.",
   "main": "./dist/src/index.js",
   "scripts": {
