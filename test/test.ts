@@ -292,7 +292,7 @@ test_normal(100, 10)
     .sort(()=> Math.random() - 0.5) as PANEL[]; /* Typescript で `flat` の型判定が正しくないので補正 */
   }
 
-  function subtractAndRandomPanel<PANEL>(panels: readonly PANEL[], subtract: readonly PANEL[]): PANEL[]{
+  function subtractAndShufflePanel<PANEL>(panels: readonly PANEL[], subtract: readonly PANEL[]): PANEL[]{
     const _subtract = [...subtract ];
     return panels.filter((p) => {
       if(_subtract.includes(p)){
@@ -332,7 +332,7 @@ test_normal(100, 10)
     const panels = ["A", "A", "A", "B", "B", "C", "C", "-", "-"] as const;
     return execute_multiple(0, config, repo_ctor, 100, (result, set_count, count) => {
       const open = panelArrayFromResult(result, panel_patterns);
-      const closed = subtractAndRandomPanel(panels, open);
+      const closed = subtractAndShufflePanel(panels, open);
       console.log(`[${set_count}-${count}] result: ${result}, open: ${open.join(",")}, closed: ${closed.join(",")}`);
     });
   })
@@ -360,7 +360,7 @@ test_normal(100, 10)
     const panels = ["A", "A", "A", "-", "-", "-", "-", "-", "-"] as const;
     return execute_multiple(1, config, repo_ctor, 100, (result, set_count, count) => {
       const open = panelArrayFromResult(result, panel_patterns);
-      const closed = subtractAndRandomPanel(panels, open);
+      const closed = subtractAndShufflePanel(panels, open);
       console.log(`[${set_count}-${count}] result: ${result}, open: ${open.join(",")}, closed: ${closed.join(",")}`);
     });
   });
