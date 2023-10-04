@@ -54,7 +54,7 @@ export class Engine<WINS extends string, LOSES extends string> {
   }
 
   public execute(): Promise<WINS | LOSES> {
-    return this.m_data_repository.getPastResultHistogram(this.getTotal(this.m_config.ratio) * 100)
+    return this.m_data_repository.getPastResultHistogram(this.getTotal(this.m_config.ratio))
     .then((past_data) => {
       return this.m_data_repository.getStocks()
       .then((stocks) => {
